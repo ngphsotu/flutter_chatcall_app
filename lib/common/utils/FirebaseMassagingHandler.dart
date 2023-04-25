@@ -137,7 +137,7 @@ class FirebaseMassagingHandler {
                                   'to_name': toName,
                                   'to_avatar': toAvatar,
                                   'doc_id': docId,
-                                  'call_role': 'audience'
+                                  'call_role': 'audience',
                                 });
                               },
                               child: Container(

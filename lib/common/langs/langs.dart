@@ -1,3 +1,5 @@
+library langs;
+
 export 'en_US.dart';
 export 'zh_HK.dart';
 export 'zh_Hans.dart';

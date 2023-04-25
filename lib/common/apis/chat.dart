@@ -1,8 +1,7 @@
 import 'dart:io';
 import 'package:dio/dio.dart';
 
-import '../utils/utils.dart';
-import '../entities/entities.dart';
+import '../common.dart';
 
 class ChatAPI {
   static Future<BaseResponseEntity> bindFcmtoken(
@@ -45,15 +44,9 @@ class ChatAPI {
     String fileName = file!.path.split('/').last;
 
     FormData data = FormData.fromMap({
-      'file': await MultipartFile.fromFile(
-        file.path,
-        filename: fileName,
-      ),
+      'file': await MultipartFile.fromFile(file.path, filename: fileName),
     });
-    var response = await HttpUtil().post(
-      'api/upload_photo',
-      data: data,
-    );
+    var response = await HttpUtil().post('api/upload_photo', data: data);
     return BaseResponseEntity.fromJson(response);
   }
 

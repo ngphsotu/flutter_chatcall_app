@@ -25,3 +25,4 @@ class RouteAuthMiddleware extends GetMiddleware {
     }
   }
 }
+// * || route == AppRoutes.MESSAGE
