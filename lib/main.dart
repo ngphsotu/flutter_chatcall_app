@@ -16,7 +16,7 @@ class MyApp extends StatelessWidget {
       designSize: const Size(360, 780),
       builder: (context, child) => GetMaterialApp(
         title: 'Chat Call',
-        theme: ThemeData(primarySwatch: Colors.blue),
+        theme: AppTheme.light,
         getPages: AppPages.routes,
         initialRoute: AppPages.INITIAL,
         debugShowCheckedModeBanner: false,

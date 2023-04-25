@@ -1,8 +1,9 @@
-// ignore_for_file: avoid_print, deprecated_member_use
+// ignore_for_file: deprecated_member_use
 
 import 'dart:io';
 import 'package:dio/io.dart';
 import 'package:dio/dio.dart';
+import 'package:flutter/foundation.dart';
 import 'package:cookie_jar/cookie_jar.dart';
 import 'package:get/get.dart' hide FormData;
 import 'package:dio_cookie_manager/dio_cookie_manager.dart';
@@ -67,7 +68,9 @@ class HttpUtil {
    */
 
   void onError(ErrorEntity eInfo) {
-    print('error.code -> ${eInfo.code}, error.message -> ${eInfo.message}');
+    if (kDebugMode) {
+      print('error.code -> ${eInfo.code}, error.message -> ${eInfo.message}');
+    }
     switch (eInfo.code) {
       case 401:
         UserStore.to.onLogout();

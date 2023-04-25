@@ -1,5 +1,3 @@
-// ignore_for_file: avoid_print
-
 import '/lib.dart';
 import 'state.dart';
 import '/common/common.dart';
@@ -47,7 +45,9 @@ class SignInController extends GetxController {
 
   // * Post All Data
   _asyncPostAllData() {
-    print('... Let\'s go to message page ...');
     Get.offAllNamed(AppRoutes.MESSAGE);
+    if (kDebugMode) {
+      print('... Let\'s go to message page ...');
+    }
   }
 }

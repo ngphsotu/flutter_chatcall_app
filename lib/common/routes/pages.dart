@@ -31,6 +31,13 @@ class AppPages {
       middlewares: [RouteAuthMiddleware(priority: 1)],
     ),
 
+    //  Profile Page
+    GetPage(
+      name: AppRoutes.PROFILE,
+      page: () => const ProfilePage(),
+      binding: ProfileBinding(),
+    ),
+
     // GetPage(
     //   name: AppRoutes.Application,
     //   page: () => ApplicationPage(),
@@ -70,11 +77,7 @@ class AppPages {
     //   page: () => ContactPage(),
     //   binding: ContactBinding(),
     // ),
-    // GetPage(
-    //   name: AppRoutes.PROFILE,
-    //   page: () => ProfilePage(),
-    //   binding: ProfileBinding(),
-    // ),
+
     // GetPage(
     //   name: AppRoutes.CHAT,
     //   page: () => ChatPage(),

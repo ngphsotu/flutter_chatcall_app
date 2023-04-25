@@ -1,4 +1,4 @@
-// ignore_for_file: avoid_print, overridden_fields
+// ignore_for_file:  overridden_fields
 
 import '/lib.dart';
 import '../common.dart';
@@ -11,7 +11,9 @@ class RouteWelcomeMiddleware extends GetMiddleware {
 
   @override
   RouteSettings? redirect(String? route) {
-    print(ConfigStore.to.isFirstOpen);
+    if (kDebugMode) {
+      print(ConfigStore.to.isFirstOpen);
+    }
     if (ConfigStore.to.isFirstOpen == false) {
       return null;
     } else if (UserStore.to.isLogin == true) {

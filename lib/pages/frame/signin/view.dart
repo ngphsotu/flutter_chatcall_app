@@ -1,5 +1,3 @@
-// ignore_for_file: avoid_print
-
 import '/lib.dart';
 import 'index.dart';
 import '/common/common.dart';
@@ -50,8 +48,10 @@ class SignInPage extends GetView<SignInController> {
   Widget _buildThirdPartyLogin(String loginType, String logo) {
     return GestureDetector(
       onTap: () {
-        print('... sign up from here third party $loginType ...');
         controller.handleSignIn('google');
+        if (kDebugMode) {
+          print('... sign up from here third party $loginType ...');
+        }
       },
       child: Container(
         width: 295.w,
@@ -125,7 +125,9 @@ class SignInPage extends GetView<SignInController> {
   Widget _buildSignUpWidget() {
     return GestureDetector(
       onTap: () {
-        print('... sign up from here ...');
+        if (kDebugMode) {
+          print('... sign up from here ...');
+        }
       },
       child: Row(
         mainAxisAlignment: MainAxisAlignment.center,

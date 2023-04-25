@@ -1,4 +1,4 @@
-// ignore_for_file: avoid_print, unnecessary_overrides
+// ignore_for_file: unnecessary_overrides
 
 import '/lib.dart';
 import 'routes.dart';
@@ -20,16 +20,20 @@ class RouteObservers<R extends Route<dynamic>> extends RouteObserver<R> {
     super.didPush(route, previousRoute);
     var name = route.settings.name ?? '';
     if (name.isNotEmpty) AppPages.history.add(name);
-    print('didPush');
-    print(AppPages.history);
+    if (kDebugMode) {
+      print('didPush');
+      print(AppPages.history);
+    }
   }
 
   @override
   void didPop(Route<dynamic> route, Route<dynamic>? previousRoute) {
     super.didPop(route, previousRoute);
     AppPages.history.remove(route.settings.name);
-    print('didPop');
-    print(AppPages.history);
+    if (kDebugMode) {
+      print('didPop');
+      print(AppPages.history);
+    }
   }
 
   @override
@@ -48,15 +52,19 @@ class RouteObservers<R extends Route<dynamic>> extends RouteObserver<R> {
         }
       }
     }
-    print('didReplace');
-    print(AppPages.history);
+    if (kDebugMode) {
+      print('didReplace');
+      print(AppPages.history);
+    }
   }
 
   @override
   void didRemove(Route<dynamic> route, Route<dynamic>? previousRoute) {
     super.didRemove(route, previousRoute);
     AppPages.history.remove(route.settings.name);
-    print('didRemove');
-    print(AppPages.history);
+    if (kDebugMode) {
+      print('didRemove');
+      print(AppPages.history);
+    }
   }
 }
