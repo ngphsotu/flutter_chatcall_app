@@ -1,5 +1,7 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.example.flutter_chatcall_app">
+    <user-permission android:name="android.permission.INTERNET"/>
+    <user-permission android:name="android.permission.ACCESS_NETWORK_STATE"/>
    <application
         android:label="chatcall"
         android:name="${applicationName}"
