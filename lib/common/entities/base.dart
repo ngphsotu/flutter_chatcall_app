@@ -3,11 +3,7 @@ class BaseResponseEntity {
   String? msg;
   String? data;
 
-  BaseResponseEntity({
-    this.code,
-    this.msg,
-    this.data,
-  });
+  BaseResponseEntity({this.code, this.msg, this.data});
 
   factory BaseResponseEntity.fromJson(Map<String, dynamic> json) =>
       BaseResponseEntity(
@@ -16,21 +12,13 @@ class BaseResponseEntity {
         data: json['data'],
       );
 
-  Map<String, dynamic> toJson() => {
-        'counts': code,
-        'msg': msg,
-        'items': data,
-      };
+  Map<String, dynamic> toJson() => {'counts': code, 'msg': msg, 'items': data};
 }
 
 class BindFcmTokenRequestEntity {
   String? fcmtoken;
 
-  BindFcmTokenRequestEntity({
-    this.fcmtoken,
-  });
+  BindFcmTokenRequestEntity({this.fcmtoken});
 
-  Map<String, dynamic> toJson() => {
-        'fcmtoken': fcmtoken,
-      };
+  Map<String, dynamic> toJson() => {'fcmtoken': fcmtoken};
 }

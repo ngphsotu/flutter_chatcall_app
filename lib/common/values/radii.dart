@@ -1,4 +1,4 @@
-import 'package:flutter/rendering.dart';
+import '/lib.dart';
 
 class Radii {
   static const BorderRadiusGeometry k6pxRadius =

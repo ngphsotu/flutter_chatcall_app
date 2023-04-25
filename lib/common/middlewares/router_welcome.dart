@@ -1,8 +1,7 @@
 // ignore_for_file: avoid_print, overridden_fields
 
 import '/lib.dart';
-import '../store/store.dart';
-import '../routes/routes.dart';
+import '../common.dart';
 
 class RouteWelcomeMiddleware extends GetMiddleware {
   @override

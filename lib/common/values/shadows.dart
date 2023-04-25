@@ -1,4 +1,4 @@
-import 'package:flutter/rendering.dart';
+import '/lib.dart';
 
 class Shadows {
   static const BoxShadow primaryShadow = BoxShadow(

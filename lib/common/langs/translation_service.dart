@@ -1,10 +1,7 @@
-import 'package:flutter/material.dart';
-
-import 'package:get/get.dart';
-
+import '/lib.dart';
+import 'zh_HK.dart';
 import 'en_US.dart';
 import 'zh_Hans.dart';
-import 'zh_HK.dart';
 
 /*
 https://developer.apple.com/library/archive/documentation/MacOSX/Conceptual/BPInternational/LanguageandLocaleIDs/LanguageandLocaleIDs.html

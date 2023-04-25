@@ -1,8 +1,7 @@
 // ignore_for_file: unnecessary_overrides
 
 import '/lib.dart';
-import '../values/values.dart';
-import '../services/services.dart';
+import '../common.dart';
 
 class ConfigStore extends GetxController {
   bool isFirstOpen = false;

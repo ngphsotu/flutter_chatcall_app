@@ -1,5 +1,5 @@
 import '/lib.dart';
-import '../values/values.dart';
+import '../common.dart';
 
 Widget inputTextEdit({
   bool readOnly = false,

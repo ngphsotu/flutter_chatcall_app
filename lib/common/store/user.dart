@@ -1,10 +1,5 @@
-import 'dart:convert';
-
 import '/lib.dart';
-import '../routes/routes.dart';
-import '../values/values.dart';
-import '../entities/entities.dart';
-import '../services/services.dart';
+import '../common.dart';
 
 class UserStore extends GetxController {
   String token = '';
@@ -26,7 +21,7 @@ class UserStore extends GetxController {
     }
   }
 
-  // * Set Token
+  // * Saving Token
   Future<void> setToken(String value) async {
     await StorageService.to.setString(STORAGE_USER_TOKEN_KEY, value);
     token = value;
@@ -41,7 +36,7 @@ class UserStore extends GetxController {
     return StorageService.to.getString(STORAGE_USER_PROFILE_KEY);
   }
 
-  // * Save Profile
+  // * Saving Profile
   Future<void> saveProfile(UserItem profile) async {
     _isLogin.value = true;
     StorageService.to.setString(STORAGE_USER_PROFILE_KEY, jsonEncode(profile));
@@ -49,7 +44,7 @@ class UserStore extends GetxController {
     setToken(profile.accessToken!);
   }
 
-  // * On Logout
+  // * During Logout
   Future<void> onLogout() async {
     // if (_isLogin.value) await UserAPI.logout();
     await StorageService.to.remove(STORAGE_USER_TOKEN_KEY);

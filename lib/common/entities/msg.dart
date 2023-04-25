@@ -1,4 +1,4 @@
-import 'package:cloud_firestore/cloud_firestore.dart';
+import '/lib.dart';
 
 class Msg {
   final String? fromToken;

@@ -2,8 +2,8 @@ import '/lib.dart';
 import 'color.dart';
 
 class AppTheme {
-  static const horizontalMargin = 16.0;
-  static const radius = 10.0;
+  static const radius = 10;
+  static const horizontalMargin = 16;
 
   static ThemeData light = ThemeData(
     brightness: Brightness.light,

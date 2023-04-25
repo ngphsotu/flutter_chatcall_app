@@ -6,14 +6,18 @@ class AppColors {
   static const Color tabBarElement = Color.fromARGB(255, 208, 208, 208);
   static const Color tabCellSeparator = Color.fromARGB(255, 230, 230, 231);
   static const Color primarybg = Color.fromARGB(210, 32, 47, 62);
+  // Primary Color Black
   static const Color primaryText = Color.fromARGB(255, 32, 47, 62);
+  // Primary Color
   static const Color primaryElement = Color.fromARGB(255, 74, 123, 246);
   static const Color primaryElementBg = Color.fromARGB(255, 238, 121, 99);
   static const Color secondaryElement = Color.fromARGB(255, 247, 247, 249);
+  // Background White Color
   static const Color primaryBackground = Color.fromARGB(255, 255, 255, 255);
   static const Color primaryElementText = Color.fromARGB(255, 255, 255, 255);
   static const Color primaryElementStatus = Color.fromARGB(255, 88, 174, 127);
   static const Color secondaryElementText = Color.fromARGB(255, 74, 123, 246);
+  // Background Grey Color
   static const Color primarySecondaryBackground =
       Color.fromARGB(255, 247, 247, 249);
   static const Color primarySecondaryElementText =

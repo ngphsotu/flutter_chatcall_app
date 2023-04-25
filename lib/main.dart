@@ -1,7 +1,9 @@
 import 'lib.dart';
-import 'app/home/home.dart';
+import 'global.dart';
+import '/common/common.dart';
 
-void main() {
+Future<void> main() async {
+  await Global.init();
   runApp(const MyApp());
 }
 
@@ -10,11 +12,15 @@ class MyApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
-      debugShowCheckedModeBanner: false,
-      title: 'Chat Call',
-      theme: ThemeData(primarySwatch: Colors.blue),
-      home: const HomePage(),
+    return ScreenUtilInit(
+      designSize: const Size(360, 780),
+      builder: (context, child) => GetMaterialApp(
+        title: 'Chat Call',
+        theme: ThemeData(primarySwatch: Colors.blue),
+        getPages: AppPages.routes,
+        initialRoute: AppPages.INITIAL,
+        debugShowCheckedModeBanner: false,
+      ),
     );
   }
 }

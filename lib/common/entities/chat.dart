@@ -145,11 +145,7 @@ class SyncMessageResponseEntity {
   String? msg;
   List<MsgListcontent>? data;
 
-  SyncMessageResponseEntity({
-    this.code,
-    this.msg,
-    this.data,
-  });
+  SyncMessageResponseEntity({this.code, this.msg, this.data});
 
   factory SyncMessageResponseEntity.fromJson(Map<String, dynamic> json) =>
       SyncMessageResponseEntity(

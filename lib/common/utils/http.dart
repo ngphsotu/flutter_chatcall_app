@@ -1,11 +1,13 @@
 // ignore_for_file: avoid_print, deprecated_member_use
 
 import 'dart:io';
-import 'package:dio/dio.dart';
-
 import 'package:dio/io.dart';
+import 'package:dio/dio.dart';
+import 'package:cookie_jar/cookie_jar.dart';
+import 'package:get/get.dart' hide FormData;
+import 'package:dio_cookie_manager/dio_cookie_manager.dart';
+import 'package:flutter_easyloading/flutter_easyloading.dart';
 
-import '/lib.dart';
 import 'utils.dart';
 import '../store/store.dart';
 import '../values/values.dart';

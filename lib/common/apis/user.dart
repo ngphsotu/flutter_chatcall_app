@@ -1,5 +1,4 @@
-import '../utils/utils.dart';
-import '../entities/entities.dart';
+import '../common.dart';
 
 class UserAPI {
   static Future<UserLoginResponseEntity> login(

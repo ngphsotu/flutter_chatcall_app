@@ -1,11 +1,7 @@
 // ignore_for_file: file_names, avoid_print, unused_local_variable
 
 import '/lib.dart';
-import '../apis/apis.dart';
-import '../store/store.dart';
-import '../routes/routes.dart';
-import '../values/values.dart';
-import '../entities/entities.dart';
+import '../common.dart';
 
 class FirebaseMassagingHandler {
   FirebaseMassagingHandler._();
@@ -13,18 +9,18 @@ class FirebaseMassagingHandler {
       const AndroidNotificationChannel(
     'com.dbestech.chatty.call', // id
     'chatty_call', // title
+    sound: RawResourceAndroidNotificationSound('alert'),
+    playSound: true,
     importance: Importance.max,
     enableLights: true,
-    playSound: true,
-    sound: RawResourceAndroidNotificationSound('alert'),
   );
   static AndroidNotificationChannel channelMessage =
       const AndroidNotificationChannel(
     'com.dbestech.chatty.message', // id
     'chatty_message', // title
+    playSound: true,
     importance: Importance.defaultImportance,
     enableLights: true,
-    playSound: true,
     // sound: RawResourceAndroidNotificationSound('alert'),
   );
 
@@ -39,10 +35,10 @@ class FirebaseMassagingHandler {
         sound: true,
         badge: true,
         alert: true,
-        announcement: false,
         carPlay: false,
-        criticalAlert: false,
         provisional: false,
+        announcement: false,
+        criticalAlert: false,
       );
 
       RemoteMessage? initialMessage =
@@ -51,12 +47,13 @@ class FirebaseMassagingHandler {
         print('initialMessage------');
         print(initialMessage);
       }
+      var darwinInitializationSettings = const DarwinInitializationSettings();
       var initializationSettingsAndroid =
           const AndroidInitializationSettings('ic_launcher');
-      var darwinInitializationSettings = const DarwinInitializationSettings();
       var initializationSettings = InitializationSettings(
-          android: initializationSettingsAndroid,
-          iOS: darwinInitializationSettings);
+        iOS: darwinInitializationSettings,
+        android: initializationSettingsAndroid,
+      );
       flutterLocalNotificationsPlugin.initialize(initializationSettings,
           onDidReceiveNotificationResponse: (value) {
         print('----------onDidReceiveNotificationResponse');
@@ -78,7 +75,7 @@ class FirebaseMassagingHandler {
 
   static Future<void> _receiveNotification(RemoteMessage message) async {
     if (message.data['call_type'] != null) {
-      //  ////1. voice 2. video 3. text, 4.cancel
+      // 1. voice 2. video 3. text, 4.cancel
       if (message.data['call_type'] == 'voice') {
         //  FirebaseMassagingHandler.flutterLocalNotificationsPlugin.cancelAll();
         var data = message.data;

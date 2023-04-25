@@ -1,6 +1,6 @@
-import '../entities/entities.dart';
-
 //https://github.com/HeySreelal/countrycodes
+
+import '../common.dart';
 
 class Countries {
   static List<Country> get list => _list;
